@@ -52,6 +52,7 @@ namespace MyWorkerService
                 var errCode = param.Get<decimal?>("OUTP_error_code");
                 var errMsg = param.Get<string>("OUTP_error_message");
 
+                Console.WriteLine($"\n-----------------------------------------------------Execution #{GetCounter.GetNextCounter()}-------------------------------------------------------");
                 if (paymentDate.HasValue) Console.WriteLine($"\nPaymentDate = \"{paymentDate}\"");
                 else Console.WriteLine("\nPaymentDate = \"NULL\"");
 
@@ -90,6 +91,16 @@ namespace MyWorkerService
             param.Add("OUTP_error_message", dbType: DbType.String, size: 4000, direction: ParameterDirection.Output);
 
             return param;
+        }
+    }
+
+    public class GetCounter
+    {
+        static int counter = 0;
+        public static int GetNextCounter()
+        {
+            counter++;
+            return counter;
         }
     }
 }
