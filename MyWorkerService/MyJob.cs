@@ -52,7 +52,7 @@ namespace MyWorkerService
                 var errCode = param.Get<decimal?>("OUTP_error_code");
                 var errMsg = param.Get<string>("OUTP_error_message");
 
-                Console.WriteLine($"\n-----------------------------------------------------Execution #{GetCounter.GetNextCounter()}-------------------------------------------------------");
+                Console.WriteLine($"\n-----------------------------------------------------Execution #{GetCounter.GetNextCounter()}------------------------------------------------------");
                 if (paymentDate.HasValue) Console.WriteLine($"\nPaymentDate = \"{paymentDate}\"");
                 else Console.WriteLine("\nPaymentDate = \"NULL\"");
 
